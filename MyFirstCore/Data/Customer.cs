@@ -6,7 +6,7 @@ namespace MyFirstCore.Data
     {
         public int Id { get; set; }
 
-        [Required, StringLength(100)]
+        [Required(ErrorMessage = "Podaj nazwę"), StringLength(100)]
         public string Name { get; set; }
     }
 }

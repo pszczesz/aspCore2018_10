@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -15,6 +16,7 @@ namespace MyFirstCore.Pages
             _db = db;
         }
         [BindProperty]
+        [Required(ErrorMessage = "Podaj dane")]
         public Customer Customer { get; set; }
 
         public async Task<IActionResult> OnPostAsync() {
@@ -24,7 +26,7 @@ namespace MyFirstCore.Pages
 
             _db.Customers.Add(Customer);
             await _db.SaveChangesAsync();
-            return RedirectToPage("/Index");
+            return RedirectToPage("/Index3");
         }
     }
 }
