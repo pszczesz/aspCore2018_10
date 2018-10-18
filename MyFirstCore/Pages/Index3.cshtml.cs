@@ -11,7 +11,7 @@ namespace MyFirstCore.Pages
 {
     public class Index3Model : PageModel {
         private readonly AppDbContext _db;
-
+        
         public Index3Model(AppDbContext db) {
             _db = db;
         }
